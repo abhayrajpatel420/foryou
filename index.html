@@ -1,442 +1,198 @@
 <!DOCTYPE html>
 <html lang="hi">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For You ❤️</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+    <title>Message ✨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        * {
-            box-sizing: border-box;
-        }
-        /* 🌌 DARK THEME ANIMATION */
-        
-        @keyframes darkMood {
-            0% {
-                background-color: #0f0c29;
-            }
-            /* Deep Night Blue */
-            25% {
-                background-color: #302b63;
-            }
-            /* Royal Purple */
-            50% {
-                background-color: #24243e;
-            }
-            /* Cosmic Blue */
-            75% {
-                background-color: #2c001e;
-            }
-            /* Dark Maroon */
-            100% {
-                background-color: #000000;
-            }
-            /* Pitch Black */
-        }
-        
+        /* 🌌 Deep Space Background */
         body {
             margin: 0;
             padding: 0;
-            background-color: #0f0c29;
-            animation: darkMood 12s infinite alternate;
-            font-family: 'Nunito', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-            color: white;
-        }
-        /* ✨ Flying Hearts */
-        
-        .heart-bg {
-            position: absolute;
-            bottom: -20px;
-            font-size: 20px;
-            color: rgba(255, 20, 147, 0.8);
-            text-shadow: 0 0 5px #ff1493;
-            animation: floatUp linear forwards;
-            z-index: 0;
-            pointer-events: none;
-        }
-        
-        @keyframes floatUp {
-            0% {
-                transform: translateY(0) scale(1);
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(-110vh) scale(1.5);
-                opacity: 0;
-            }
-        }
-        /* 📱 Glass Card */
-        
-        .card {
-            background: rgba(20, 20, 20, 0.6);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            width: 90%;
-            max-width: 380px;
-            height: 650px;
-            border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
-            position: relative;
-            overflow: hidden;
-            text-align: center;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            z-index: 10;
-        }
-        /* ✨ Video Circles (Replaced GIF) */
-        
-        .video-container {
-            width: 150px;
-            height: 150px;
-            margin: 20px auto;
-            border-radius: 50%;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            object-fit: cover;
             background-color: #000;
-            display: block;
-            pointer-events: none;
-            /* User cant click pause/play */
+            background-image: 
+                radial-gradient(circle at 50% 50%, #1a1f35 0%, #000 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            overflow: hidden;
+            position: relative;
         }
-        /* Text Styles */
-        
-        h2 {
-            color: #ff79c6;
-            /* Neon Pink */
-            font-size: 1.6rem;
-            margin-bottom: 10px;
-            text-shadow: 0 0 10px rgba(255, 121, 198, 0.4);
-        }
-        
-        p {
-            color: #e0e0e0;
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            font-weight: 300;
-        }
-        /* Slides Logic */
-        
-        .slide {
+
+        /* ✨ Floating Particles (Stars) */
+        .star {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            padding: 30px;
-            background: transparent;
-            transition: transform 0.5s ease-in-out;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 4s infinite ease-in-out;
+            opacity: 0.6;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* ⬛ NEW BOX STYLE: Cyber Tech Card */
+        .card {
+            /* Solid Dark Background with subtle gradient */
+            background: linear-gradient(180deg, #161b22 0%, #0d1117 100%);
+            
+            /* Neon Border Effect */
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            border-top: 1px solid rgba(0, 210, 255, 0.6); /* Top is brighter */
+            
+            /* Outer Glow */
+            box-shadow: 0 0 30px rgba(0, 210, 255, 0.05), inset 0 0 20px rgba(0,0,0,0.5);
+            
+            width: 85%;
+            max-width: 380px;
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: left;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            gap: 18px;
+            z-index: 10;
+            position: relative;
+            animation: slideUp 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Tech Header */
+        h2 {
+            font-size: 1.5rem;
+            margin: 0 0 5px 0;
+            color: #fff;
+            font-weight: 700;
+            display: flex;
             align-items: center;
         }
         
-        .slide.hidden {
-            transform: translateX(100%);
+        /* Small dot before title */
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #00d2ff;
+            border-radius: 50%;
+            margin-right: 10px;
+            box-shadow: 0 0 10px #00d2ff;
         }
-        
-        .slide.active {
-            transform: translateX(0);
+
+        p {
+            font-size: 0.92rem;
+            line-height: 1.65;
+            color: #b0b6c4; /* Soft tech grey */
+            margin: 0;
+            font-weight: 300;
+            letter-spacing: 0.3px;
         }
-        
-        .slide.exit {
-            transform: translateX(-100%);
+
+        .highlight {
+            color: #00d2ff;
+            font-weight: 500;
         }
-        /* Buttons */
-        
-        .btn {
-            background: linear-gradient(45deg, #ff00cc, #333399);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 5px 20px rgba(255, 0, 204, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            border: 2px solid #ff79c6;
-            color: #ff79c6;
-        }
-        
-        .btn-restart {
-            margin-top: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            font-size: 0.8rem;
-            padding: 8px 20px;
-            color: #ccc;
-        }
-        /* Reason List */
-        
-        .reason-list {
-            text-align: left;
+
+        /* Divider Line */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(56, 139, 253, 0.3), transparent);
+            margin: 5px 0;
             width: 100%;
         }
-        
-        .reason-item {
-            background: rgba(255, 255, 255, 0.05);
-            margin-bottom: 10px;
-            padding: 15px;
-            border-radius: 15px;
-            cursor: pointer;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: 0.3s;
-        }
-        
-        .reason-item:hover {
-            border-color: #ff79c6;
-            background: rgba(255, 121, 198, 0.1);
-        }
-        
-        .reason-title {
-            font-weight: 700;
-            color: #ff79c6;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .reason-desc {
-            display: none;
+
+        /* 📦 QUOTE PANEL (Integrated Look) */
+        .last-message-panel {
             margin-top: 10px;
-            font-size: 0.9rem;
-            color: #d1d1d1;
+            background: rgba(0, 210, 255, 0.03); /* Very faint blue tint */
+            border-left: 3px solid #00d2ff;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            position: relative;
         }
-        
-        .reason-item.open .reason-desc {
+
+        .last-message-text {
+            font-size: 0.85rem;
+            color: #8b949e;
+            font-style: italic;
+            margin-bottom: 0;
+            line-height: 1.5;
             display: block;
-            animation: fadeIn 0.5s;
+            margin-bottom: 15px;
         }
-        
-        .choice-btns {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-            justify-content: center;
+
+        .btn-take-care {
+            display: inline-block;
+            background: rgba(0, 210, 255, 0.1);
+            color: #00d2ff;
+            padding: 6px 20px;
+            border-radius: 4px; /* Slightly square for tech feel */
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(0, 210, 255, 0.4);
+            transition: all 0.3s;
+            float: right;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
-        /* Music Icon Animation */
-        
-        .music-icon {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 20px;
-            color: rgba(255, 255, 255, 0.5);
-            animation: spin 3s linear infinite;
-            display: none;
+
+        .btn-take-care:hover {
+            background: #00d2ff;
+            color: #0d1117; /* Dark text on hover */
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.6);
         }
-        
-        @keyframes spin {
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
+
     </style>
 </head>
-
 <body>
 
-    <audio id="bg-music" loop>
-    <source src="song.mp3" type="audio/mp3">
-</audio>
+    <div class="star" style="top: 10%; left: 20%; width: 2px; height: 2px;"></div>
+    <div class="star" style="top: 30%; left: 80%; width: 3px; height: 3px; animation-delay: 1s;"></div>
+    <div class="star" style="top: 70%; left: 40%; width: 2px; height: 2px; animation-delay: 2s;"></div>
+    <div class="star" style="top: 90%; left: 10%; width: 4px; height: 4px; animation-delay: 0.5s;"></div>
 
     <div class="card">
-        <div class="music-icon" id="musicIcon">🎵</div>
+        <h2>Ek zaroori baat...</h2>
+        
+        <p>
+            Sabse pehle, agar meri kisi baat ka bura laga ho, toh please dil pe mat lena aur maaf kar dena.
+        </p>
 
-        <div class="slide active" id="slide1">
-            <video class="video-container" autoplay loop muted playsinline>
-            <source src="1.mp4" type="video/mp4">
-        </video>
-            <h2>Hey, suno...</h2>
-            <p>Mere paas tumhare liye kuch hai.<br>Bas 2 minute dena.</p>
-            <button class="btn" onclick="ensureMusicAndNext()">Okay ❤️</button>
-        </div>
+        <div class="divider"></div>
 
-        <div class="slide hidden" id="slide2">
-            <video class="video-container" autoplay loop muted playsinline>
-            <source src="2.mp4" type="video/mp4">
-        </video>
-            <h2>Bas ek mulakaat...</h2>
-            <p>Hum sirf ek baar mile hain.<br>Par us ek mulakaat me mujhe laga jaise...<br><b>Main tumhe sadiyon se jaanta hoon.</b></p>
-            <button class="btn" onclick="nextSlide(3)">Aage padho... 👉</button>
-        </div>
+        <p>
+            Humari wajah se family relations par asar nahi aana chahiye. Wo tumhari Bua ka ghar hai, aana mat chhodna.
+        </p>
 
-        <div class="slide hidden" id="slide3">
-            <h2>Meri Sachchai 🥀</h2>
-            <p style="text-align:left; font-size: 0.95rem;">
-                Ek saal pehle, meri duniya bikhar gayi thi jab maine <b>kisi apne</b> ko khoya.<br><br> Main andar se toot chuka tha. Maine jeene ki umeed chhod di thi.<br><br>
-                <b>Par phir tum dikhi...</b> ✨
-            </p>
-            <button class="btn" onclick="nextSlide(4)">Aage jao 👉</button>
-        </div>
+        <p>
+            Agar mere hone se wahan tumhe awkwardness ya asuvidha lage, toh bata dena. Main manage kar lunga.
+        </p>
 
-        <div class="slide hidden" id="slide4">
-            <h2>Ek Chhoti Baat...</h2>
-            <p style="text-align:center; font-size: 1rem; padding: 10px;">
-                Main tumse kuch poochna chahta hoon jo agli slide par hai.
-                <br><br> Yadi tumhe wo baatein <b>tumhare perspective</b> se sahi na lagein, toh please use ignore kar dena.
-                <br><br> Par agar sahi lagein, toh mujhe reply zaroor karna. ✨
-            </p>
-            <button class="btn" onclick="nextSlide(5)">Theek hai, poocho 👉</button>
-        </div>
+        <div class="divider"></div>
 
-        <div class="slide hidden" id="slide5">
-            <video class="video-container" autoplay loop muted playsinline>
-            <source src="3.mp4" type="video/mp4">
-        </video>
-            <h2>Ek Nayi Subah 🌅</h2>
-            <p style="font-size: 0.95rem;">
-                Pichla saal mere liye ek 'andheri raat' jaisa tha. Par tumse milne ke baad mujhe pehli baar 'Subah' hone ki umeed dikhi hai.
-                <br><br>
-                <b>Kya tum meri 2026 ki pehli kiran banogi?</b>
-            </p>
-            <button class="btn" onclick="nextSlide(6)">Maine ye kyu poocha? 🤔</button>
-        </div>
+        <p>
+            Main <span class="highlight">Cyber Security</span> mein hoon. Circle mein kisi ko bhi <b>Mobile, Social Media ya Internet</b> ki help chahiye ho, toh batana zaroor.
+        </p>
 
-        <div class="slide hidden" id="slide6">
-            <h2>Maine tumhe kyu chuna?</h2>
-            <p style="font-size:0.8rem; color:#aaa;">Mere 3 waade (Tap karke padho) 👇</p>
-            <div class="reason-list">
-                <div class="reason-item" onclick="toggleReason(this)">
-                    <div class="reason-title">❤️ Wo Ehsaas</div>
-                    <div class="reason-desc">Bheed me bhi main akela tha. Par tumhe dekh kar pehli baar dil ne kaha - <b>"Ye woh hai jo meri khamoshi aur mere bikhre hue hisson ko samajh sakti hai."</b></div>
-                </div>
-                <div class="reason-item" onclick="toggleReason(this)">
-                    <div class="reason-title">🕊️ Azaadi ka Waada</div>
-                    <div class="reason-desc">Tum par koi haq nahi jataunga. Meri bas ek hi zid hai—<b>Hum juda na hon, 'Block' na hon.</b> Chahe dost bankar rahein.</div>
-                </div>
-                <div class="reason-item" onclick="toggleReason(this)">
-                    <div class="reason-title">✨ Meri Niyat</div>
-                    <div class="reason-desc">Mujhe tumhara jism nahi, tumhari rooh (Soul) chahiye. Main tumhe bina chuye bhi chaah sakta hoon.</div>
-                </div>
-            </div>
-            <br>
-            <button class="btn" onclick="nextSlide(7)">Jawaab do 👉</button>
-        </div>
-
-        <div class="slide hidden" id="slide7">
-            <h2>To kya socha?</h2>
-            <p>Andheri raat ke baad...<br>Ek nayi shuruwat?</p>
-            <div class="choice-btns">
-                <button class="btn" onclick="nextSlide(8)">Haan, Done! 💖</button>
-                <button class="btn btn-outline" onclick="nextSlide(9)">Nahi (Dost) 🤝</button>
+        <div class="last-message-panel">
+            <span class="last-message-text">
+                "Waqt ke saath agar kabhi mann badle, toh you can reach out anytime."
+            </span>
+            <div style="clear: both; text-align: right;">
+                <a href="#" class="btn-take-care">Take Care ✨</a>
             </div>
         </div>
-
-        <div class="slide hidden" id="slide8">
-            <video class="video-container" autoplay loop muted playsinline>
-            <source src="4.mp4" type="video/mp4">
-        </video>
-            <h2>Shukriya! ❤️</h2>
-            <p>Tumne mujhe wo umeed di hai jo kho gayi thi.<br>Main tumhara bharosa kabhi nahi todunga.</p>
-            <button class="btn btn-restart" onclick="location.reload()">🔄 Wapas Shuru Karein</button>
-        </div>
-
-        <div class="slide hidden" id="slide9">
-            <h2>Koi baat nahi 😊</h2>
-            <p>Tumhara faisla sar aankhon par.<br>Bas connected rahenge, <b>Block nahi!</b> ✨</p>
-            <button class="btn btn-restart" onclick="location.reload()">🔄 Wapas Shuru Karein</button>
-        </div>
-
     </div>
 
-    <script>
-        const audio = document.getElementById('bg-music');
-        let musicStarted = false;
-
-        // 1. Try to play music automatically when page loads
-        window.addEventListener('load', () => {
-            const playPromise = audio.play();
-            if (playPromise !== undefined) {
-                playPromise.then(() => {
-                    // Auto-play worked!
-                    musicStarted = true;
-                    document.getElementById('musicIcon').style.display = 'block';
-                }).catch(error => {
-                    // Auto-play blocked by browser. 
-                    // Don't worry, we will handle it on the first button click.
-                    console.log("Auto-play prevented. Waiting for interaction.");
-                });
-            }
-        });
-
-        // 2. Fallback: If autoplay failed, start music when user clicks "Okay"
-        function ensureMusicAndNext() {
-            if (!musicStarted) {
-                audio.play().then(() => {
-                    document.getElementById('musicIcon').style.display = 'block';
-                    musicStarted = true;
-                }).catch(e => console.log(e));
-            }
-            nextSlide(2);
-        }
-
-        function nextSlide(n) {
-            const c = document.querySelector('.slide.active');
-            if (c) {
-                c.classList.remove('active');
-                c.classList.add('exit');
-            }
-
-            const next = document.getElementById('slide' + n);
-            next.classList.remove('exit', 'hidden');
-            next.classList.add('active');
-
-            if (n === 1) {
-                document.querySelectorAll('.slide').forEach(s => {
-                    s.classList.remove('exit');
-                    s.classList.add('hidden');
-                });
-                document.getElementById('slide1').classList.remove('hidden');
-                document.getElementById('slide1').classList.add('active');
-            }
-        }
-
-        function toggleReason(e) {
-            document.querySelectorAll('.reason-item').forEach(i => {
-                if (i !== e) i.classList.remove('open');
-            });
-            e.classList.toggle('open');
-        }
-
-        // Floating Hearts
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart-bg');
-            heart.innerHTML = '❤️';
-            heart.style.left = Math.random() * 100 + "vw";
-            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
-            document.body.appendChild(heart);
-            setTimeout(() => {
-                heart.remove();
-            }, 5000);
-        }
-        setInterval(createHeart, 300);
-    </script>
-
 </body>
-
 </html>
